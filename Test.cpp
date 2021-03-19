@@ -65,7 +65,7 @@ TEST_CASE("Simple Reading"){
         //Random length from [1,20]
         int randomLength = rand()%20 +1 ;
         //Generated string
-        std::string randomString = RandomString(randomLength);
+        std::string randomString = std::to_string(RandomString(randomLength));
         //Random row
         int row = rand()%100;
         //Random column
