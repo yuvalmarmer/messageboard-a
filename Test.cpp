@@ -1,5 +1,4 @@
 #include "doctest.h"
-#include "snowman.hpp"
 #include <string>
 #include "Direction.hpp"
 
