@@ -72,9 +72,9 @@ TEST_CASE("Simple Reading"){
         int col = rand()%100;
 
         //Posting the message
-        board.post(row, col, ariel::Direction::Horizontal, RandomString.c_str());
+        board.post(row, col, ariel::Direction::Horizontal, RandomString;
         //Checking read functinality works
-        // CHECK(board.read(row, col, ariel::Direction::Horizontal, randomLength) == RandomString);
+        CHECK(board.read(row, col, ariel::Direction::Horizontal, randomLength) == RandomString);
     }
 
     //Zero reading
