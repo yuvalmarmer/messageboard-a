@@ -75,8 +75,7 @@ TEST_CASE("Simple Reading"){
         //Posting the message
         board.post(row, col, ariel::Direction::Horizontal, RandomString);
         //Checking read functinality works
-        std::string s = ;
-        CHECK(board.read(row, col, ariel::Direction::Horizontal, randomLength).compare(RandomString)));
+        CHECK(board.read(row, col, ariel::Direction::Horizontal, randomLength).compare(RandomString));
     }
 
     //Zero reading
