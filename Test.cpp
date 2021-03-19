@@ -23,7 +23,7 @@ std::string RandomString(int n)
     for (int i = 0; i < n; i++)  
         res = res + std::to_string(alphabet[rand() % MAX]); 
       
-    return std::to_string(res);
+    return res;
 } 
 
 
