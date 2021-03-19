@@ -21,9 +21,9 @@ std::string RandomString(int n)
     
     std::string res = ""; 
     for (int i = 0; i < n; i++)  
-        res = res + std::string(alphabet[rand() % MAX]); 
+        res = res + alphabet[rand() % MAX]; 
       
-    return res;
+    return std::to_string(res);
 } 
 
 TEST_CASE("Checking init values"){
