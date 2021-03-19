@@ -6,7 +6,7 @@
 using namespace ariel;
 using namespace std;
 
-Board::Board board;
+Board::Board *board = new Board::Board;
 
 const int MAX = 26; 
 
