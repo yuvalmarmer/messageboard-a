@@ -11,40 +11,21 @@ Board::Board board;
 const int MAX = 26; 
 
 // Generates random strings with n lenght
-// std::string RandomString(int n) 
-// {  
-//     // Alphbetic 
-//     char alphabet[MAX] = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 
-//                           'h', 'i', 'j', 'k', 'l', 'm', 'n',  
-//                           'o', 'p', 'q', 'r', 's', 't', 'u', 
-//                           'v', 'w', 'x', 'y', 'z' }; 
+std::string RandomString(int n) 
+{  
+    // Alphbetic 
+    char alphabet[MAX] = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 
+                          'h', 'i', 'j', 'k', 'l', 'm', 'n',  
+                          'o', 'p', 'q', 'r', 's', 't', 'u', 
+                          'v', 'w', 'x', 'y', 'z' }; 
     
-//     std::string res = ""; 
-//     for (int i = 0; i < n; i++)  
-//         res = res + std::to_string(alphabet[rand() % MAX]); 
+    std::string res = ""; 
+    for (int i = 0; i < n; i++)  
+        res = res + std::to_string(alphabet[rand() % MAX]); 
       
-//     return std::to_string(res);
-// } 
+    return std::to_string(res);
+} 
 
-string RandomString(const int len) {
-    
-    string tmp_s;
-    static const char alphanum[] =
-        "0123456789"
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        "abcdefghijklmnopqrstuvwxyz";
-    
-    srand( (unsigned) time(NULL) * getpid());
-
-    tmp_s.reserve(len);
-
-    for (int i = 0; i < len; ++i) 
-        tmp_s += alphanum[rand() % (sizeof(alphanum) - 1)];
-    
-    
-    return tmp_s;
-    
-}
 
 TEST_CASE("Checking init values"){
     //Checking if the borad is good initilizted 200*200
