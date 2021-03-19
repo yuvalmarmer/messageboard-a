@@ -65,7 +65,7 @@ TEST_CASE("Simple Reading"){
         //Random length from [1,20]
         int randomLength = rand()%20 +1 ;
         //Generated string
-        string randomString = RandomString(randomLength);
+        std::string randomString = RandomString(randomLength);
         //Random row
         int row = rand()%100;
         //Random column
@@ -74,7 +74,7 @@ TEST_CASE("Simple Reading"){
         //Posting the message
         board->post(row, col, ariel::Direction::Horizontal, RandomString);
         //Checking read functinality works
-        CHECK(board->read(row, col, ariel::Direction::Horizontal, randomLength)==RandomString);
+        CHECK(board->read(row, col, ariel::Direction::Horizontal, randomLength)== std::string(RandomString));
     }
 
     //Zero reading
