@@ -21,7 +21,7 @@ std::string RandomString(int n)
     
     std::string res = ""; 
     for (int i = 0; i < n; i++)  
-        res = res + alphabet[rand() % MAX]; 
+        res = res + std::string(alphabet[rand() % MAX]); 
       
     return res;
 } 
