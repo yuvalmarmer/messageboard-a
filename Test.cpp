@@ -6,7 +6,7 @@
 using namespace ariel;
 using namespace std;
 
-Board::Board *board = new Board::Board;
+Board::Board board;
 
 const int MAX = 26; 
 
@@ -34,9 +34,9 @@ TEST_CASE("Checking init values"){
         vertical_str+='_';
     }
     //Checking horizontal string
-    CHECK(board->read(0,0,ariel::Direction::Horizontal,200) == std::string(horizontal_str));
+    CHECK(board.read(0,0,ariel::Direction::Horizontal,200) == std::string(horizontal_str));
     //Checking vertical string
-    CHECK(board->read(0,0,ariel::Direction::Vertical,200) == std::string(vertical_str));
+    CHECK(board.read(0,0,ariel::Direction::Vertical,200) == std::string(vertical_str));
 
 }
 
@@ -47,14 +47,14 @@ TEST_CASE("Simple Posting"){
         //Generated string
         std::string randomString = RandomString(i);
         //Horizontal check
-        CHECK_NOTHROW(board->post(rand()%100, rand()%100, ariel::Direction::Horizontal, RandomString));
+        CHECK_NOTHROW(board.post(rand()%100, rand()%100, ariel::Direction::Horizontal, RandomString));
         //Vertical check
-        CHECK_NOTHROW(board->post(rand()%100, rand()%100, ariel::Direction::Vertical, RandomString));
+        CHECK_NOTHROW(board.post(rand()%100, rand()%100, ariel::Direction::Vertical, RandomString));
     }
 
     //posting empty string
-    CHECK_NOTHROW(board->post(0, 0, ariel::Direction::Horizontal, ""));
-    CHECK_NOTHROW(board->post(0, 0, ariel::Direction::Vertical, ""));
+    CHECK_NOTHROW(board.post(0, 0, ariel::Direction::Horizontal, ""));
+    CHECK_NOTHROW(board.post(0, 0, ariel::Direction::Vertical, ""));
 
 
 }
@@ -72,14 +72,14 @@ TEST_CASE("Simple Reading"){
         int col = rand()%100;
 
         //Posting the message
-        board->post(row, col, ariel::Direction::Horizontal, RandomString.c_str());
+        board.post(row, col, ariel::Direction::Horizontal, RandomString.c_str());
         //Checking read functinality works
-        // CHECK(board->read(row, col, ariel::Direction::Horizontal, randomLength) == RandomString);
+        // CHECK(board.read(row, col, ariel::Direction::Horizontal, randomLength) == RandomString);
     }
 
     //Zero reading
-    CHECK(board->read(0, 0, ariel::Direction::Horizontal, 0) == std::string(""));
-    CHECK(board->read(0, 0, ariel::Direction::Vertical, 0) == std::string(""));
+    CHECK(board.read(0, 0, ariel::Direction::Horizontal, 0) == std::string(""));
+    CHECK(board.read(0, 0, ariel::Direction::Vertical, 0) == std::string(""));
 
 
 }
@@ -87,26 +87,26 @@ TEST_CASE("Simple Reading"){
 
 TEST_CASE("Bad posting"){
     //Negative row
-    CHECK_THROWS(board->post(-1,0,ariel::Direction::Horizontal, "Hello"));
-    CHECK_THROWS(board->post(-1,0,ariel::Direction::Vertical, "Hello"));
+    CHECK_THROWS(board.post(-1,0,ariel::Direction::Horizontal, "Hello"));
+    CHECK_THROWS(board.post(-1,0,ariel::Direction::Vertical, "Hello"));
 
     //Negative col
-    CHECK_THROWS(board->post(0,-1,ariel::Direction::Horizontal, "Hello"));
-    CHECK_THROWS(board->post(0,-1,ariel::Direction::Vertical, "Hello"));
+    CHECK_THROWS(board.post(0,-1,ariel::Direction::Horizontal, "Hello"));
+    CHECK_THROWS(board.post(0,-1,ariel::Direction::Vertical, "Hello"));
 
 }
 
 TEST_CASE("Bad reading"){
     //Negative row
-    CHECK_THROWS(board->read(-1,0,ariel::Direction::Horizontal, 10));
-    CHECK_THROWS(board->read(-1,0,ariel::Direction::Vertical, 10));
+    CHECK_THROWS(board.read(-1,0,ariel::Direction::Horizontal, 10));
+    CHECK_THROWS(board.read(-1,0,ariel::Direction::Vertical, 10));
 
     //Negative col
-    CHECK_THROWS(board->read(0,-1,ariel::Direction::Horizontal, 10));
-    CHECK_THROWS(board->read(0,-1,ariel::Direction::Vertical, 10));
+    CHECK_THROWS(board.read(0,-1,ariel::Direction::Horizontal, 10));
+    CHECK_THROWS(board.read(0,-1,ariel::Direction::Vertical, 10));
 
     //Negative length values
-    CHECK_THROWS(board->read(0,-1,ariel::Direction::Vertical, -1));
-    CHECK_THROWS(board->read(0,-1,ariel::Direction::Vertical, -100));
+    CHECK_THROWS(board.read(0,-1,ariel::Direction::Vertical, -1));
+    CHECK_THROWS(board.read(0,-1,ariel::Direction::Vertical, -100));
 }
 
