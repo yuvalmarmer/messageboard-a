@@ -1,13 +1,14 @@
 #include "doctest.h"
 #include <string>
 #include "Direction.hpp"
+#include "Board.hpp"
 
 using namespace ariel;
 using namespace std;
 
 Board::Board board;
 
-int MAX = 26;
+const int MAX = 26; 
 
 // Generates random strings with n lenght
 string RandomString(int n) 
