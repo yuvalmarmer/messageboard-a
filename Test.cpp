@@ -28,7 +28,7 @@ string RandomString(int n)
 
 TEST_CASE("Checking init values"){
     //Checking if the borad is good initilizted 200*200
-    string horizontal_str, vertical_str;
+    std::string horizontal_str, vertical_str;
     for(int i=0;i<200;++i){
         horizontal_str+='_';
         vertical_str+='_';
