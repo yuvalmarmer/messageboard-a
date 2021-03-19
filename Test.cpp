@@ -78,8 +78,8 @@ TEST_CASE("Simple Reading"){
     }
 
     //Zero reading
-    CHECK(board->read(0, 0, ariel::Direction::Horizontal, 0)==string(""));
-    CHECK(board->read(0, 0, ariel::Direction::Vertical, 0)==string(""));
+    CHECK(board->read(0, 0, ariel::Direction::Horizontal, 0) == std::string(""));
+    CHECK(board->read(0, 0, ariel::Direction::Vertical, 0) == std::string(""));
 
 
 }
