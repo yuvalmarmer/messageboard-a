@@ -7,7 +7,7 @@ using namespace std;
 
 Board::Board board;
 
-int MAX = 26
+int MAX = 26;
 
 // Generates random strings with n lenght
 string RandomString(int n) 
