@@ -11,7 +11,7 @@ Board::Board *board = new Board::Board;
 const int MAX = 26; 
 
 // Generates random strings with n lenght
-string RandomString(int n) 
+std::string RandomString(int n) 
 {  
     // Alphbetic 
     char alphabet[MAX] = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 
@@ -19,7 +19,7 @@ string RandomString(int n)
                           'o', 'p', 'q', 'r', 's', 't', 'u', 
                           'v', 'w', 'x', 'y', 'z' }; 
     
-    string res = ""; 
+    std::string res = ""; 
     for (int i = 0; i < n; i++)  
         res = res + alphabet[rand() % MAX]; 
       
