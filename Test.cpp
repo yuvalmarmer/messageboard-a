@@ -48,9 +48,9 @@ TEST_CASE("Simple Posting"){
         //Generated string
         std::string randomString = RandomString(i);
         //Horizontal check
-        CHECK_NOTHROW(board.post(rand()%100, rand()%100, ariel::Direction::Horizontal, RandomString));
+        CHECK_NOTHROW(board.post(rand()%100, rand()%100, ariel::Direction::Horizontal, randomString));
         //Vertical check
-        CHECK_NOTHROW(board.post(rand()%100, rand()%100, ariel::Direction::Vertical, RandomString));
+        CHECK_NOTHROW(board.post(rand()%100, rand()%100, ariel::Direction::Vertical, randomString));
     }
 
     //posting empty string
