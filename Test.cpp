@@ -61,13 +61,13 @@ TEST_CASE("Simple Reading"){
     //Checking 20 diffrent reading
     for(int i=0;i<20;++i){
         //Random length from [1,20]
-        int randomLength = rand()%20+1 
+        int randomLength = rand()%20+1 ;
         //Generated string
         string randomString = RandomString(randomLength);
         //Random row
-        int row = rand()%100
+        int row = rand()%100;
         //Random column
-        int col = rand()%100
+        int col = rand()%100;
 
         //Posting the message
         board->post(row, col, ariel::Direction::Horizontal, RandomString);

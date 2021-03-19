@@ -1,6 +1,7 @@
 #include <string>
 #include "Direction.hpp"
 #include <iostream>
+
 using namespace std;
 namespace ariel {
     class Board{
