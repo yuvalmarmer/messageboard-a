@@ -34,9 +34,9 @@ TEST_CASE("Checking init values"){
         vertical_str+='_';
     }
     //Checking horizontal string
-    CHECK(board->read(0,0,ariel::Direction::Horizontal,200) == horizontal_str);
+    CHECK(board->read(0,0,ariel::Direction::Horizontal,200) == string(horizontal_str));
     //Checking vertical string
-    CHECK(board->read(0,0,ariel::Direction::Vertical,200) == vertical_str);
+    CHECK(board->read(0,0,ariel::Direction::Vertical,200) == string(vertical_str));
 
 }
 
@@ -63,7 +63,7 @@ TEST_CASE("Simple Reading"){
     //Checking 20 diffrent reading
     for(int i=0;i<20;++i){
         //Random length from [1,20]
-        int randomLength = rand()%20+1 ;
+        int randomLength = rand()%20 +1 ;
         //Generated string
         string randomString = RandomString(randomLength);
         //Random row
