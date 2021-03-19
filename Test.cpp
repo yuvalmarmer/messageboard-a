@@ -34,9 +34,9 @@ TEST_CASE("Checking init values"){
         vertical_str+='_';
     }
     //Checking horizontal string
-    CHECK(board->read(0,0,ariel::Direction::Horizontal,200) == string(horizontal_str));
+    CHECK(board->read(0,0,ariel::Direction::Horizontal,200) == std::string(horizontal_str));
     //Checking vertical string
-    CHECK(board->read(0,0,ariel::Direction::Vertical,200) == string(vertical_str));
+    CHECK(board->read(0,0,ariel::Direction::Vertical,200) == std::string(vertical_str));
 
 }
 
