@@ -45,7 +45,7 @@ TEST_CASE("Simple Posting"){
     //Checking 20 diffrent posting 
     for(int i=1;i<21;++i){
         //Generated string
-        string randomString = RandomString(i);
+        std::string randomString = RandomString(i);
         //Horizontal check
         CHECK_NOTHROW(board->post(rand()%100, rand()%100, ariel::Direction::Horizontal, RandomString));
         //Vertical check
