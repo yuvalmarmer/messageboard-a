@@ -14,7 +14,7 @@ void Board::post(int row, int column, Direction d, std::string message){
 }
 std::string Board::read(int row, int column, Direction d , int length){
 	
-	return std::string("");
+	return "Yuval";
 }
 
 void Board::show(){
